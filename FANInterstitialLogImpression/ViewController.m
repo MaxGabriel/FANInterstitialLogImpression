@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+@import FBAudienceNetwork;
 
-@interface ViewController ()
+@interface ViewController () <FBInterstitialAdDelegate>
+
+@property (nonatomic, strong) FBInterstitialAd *ad;
 
 @end
 
@@ -17,11 +20,39 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [FBAdSettings setLogLevel:FBAdLogLevelVerbose];
+    
+    self.ad = [[FBInterstitialAd alloc] initWithPlacementID:@"500413400097719_500415960097463"];
+    self.ad.delegate = self;
+    [self.ad loadAd];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)interstitialAdDidClick:(nonnull FBInterstitialAd *)interstitialAd {
+    NSLog(@"<%@:%@:%d",[self class],NSStringFromSelector(_cmd),__LINE__);
+}
+
+- (void)interstitialAdDidClose:(nonnull FBInterstitialAd *)interstitialAd {
+    NSLog(@"<%@:%@:%d",[self class],NSStringFromSelector(_cmd),__LINE__);
+}
+
+- (void)interstitialAdWillClose:(nonnull FBInterstitialAd *)interstitialAd {
+    NSLog(@"<%@:%@:%d",[self class],NSStringFromSelector(_cmd),__LINE__);
+}
+
+- (void)interstitialAdDidLoad:(nonnull FBInterstitialAd *)interstitialAd {
+    NSLog(@"<%@:%@:%d",[self class],NSStringFromSelector(_cmd),__LINE__);
+    [interstitialAd showAdFromRootViewController:self];
+}
+
+- (void)interstitialAd:(nonnull FBInterstitialAd *)interstitialAd didFailWithError:(nonnull NSError *)error {
+    NSLog(@"<%@:%@:%d",[self class],NSStringFromSelector(_cmd),__LINE__);
+}
+
+- (void)interstitialAdWillLogImpression:(nonnull FBInterstitialAd *)interstitialAd {
+    NSLog(@"<%@:%@:%d",[self class],NSStringFromSelector(_cmd),__LINE__);
+    NSLog(@"*** Did log impression ***");
 }
 
 @end

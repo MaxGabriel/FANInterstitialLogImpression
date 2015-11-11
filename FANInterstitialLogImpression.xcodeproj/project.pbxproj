@@ -13,6 +13,7 @@
 		5000EE1A1BF2C14100B4812A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5000EE181BF2C14100B4812A /* Main.storyboard */; };
 		5000EE1C1BF2C14100B4812A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5000EE1B1BF2C14100B4812A /* Assets.xcassets */; };
 		5000EE1F1BF2C14100B4812A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5000EE1D1BF2C14100B4812A /* LaunchScreen.storyboard */; };
+		5000EE271BF2C1A100B4812A /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5000EE261BF2C1A100B4812A /* FBAudienceNetwork.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5000EE1B1BF2C14100B4812A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5000EE1E1BF2C14100B4812A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5000EE201BF2C14100B4812A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5000EE261BF2C1A100B4812A /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5000EE271BF2C1A100B4812A /* FBAudienceNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +61,7 @@
 		5000EE0E1BF2C14100B4812A /* FANInterstitialLogImpression */ = {
 			isa = PBXGroup;
 			children = (
+				5000EE261BF2C1A100B4812A /* FBAudienceNetwork.framework */,
 				5000EE121BF2C14100B4812A /* AppDelegate.h */,
 				5000EE131BF2C14100B4812A /* AppDelegate.m */,
 				5000EE151BF2C14100B4812A /* ViewController.h */,
@@ -261,6 +265,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FANInterstitialLogImpression",
+				);
 				INFOPLIST_FILE = FANInterstitialLogImpression/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tagher.FANInterstitialLogImpression;
@@ -272,6 +280,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FANInterstitialLogImpression",
+				);
 				INFOPLIST_FILE = FANInterstitialLogImpression/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Tagher.FANInterstitialLogImpression;
